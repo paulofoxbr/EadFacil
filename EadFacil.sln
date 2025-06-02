@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.Api", "EadFacil.Api", "{C952FA07-1B55-434C-A457-E443C8FC32D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.Api", "src\EadFacil.Api\EadFacil.Api.csproj", "{BABE7195-C1FB-4440-A1CC-7C11D8AFD00F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.Core", "EadFacil.Core", "{08F0C78D-2CB5-4EC2-A851-E8DB1D9DB9A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.Core", "src\EadFacil.Core\EadFacil.Core.csproj", "{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BABE7195-C1FB-4440-A1CC-7C11D8AFD00F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BABE7195-C1FB-4440-A1CC-7C11D8AFD00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BABE7195-C1FB-4440-A1CC-7C11D8AFD00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BABE7195-C1FB-4440-A1CC-7C11D8AFD00F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BABE7195-C1FB-4440-A1CC-7C11D8AFD00F} = {C952FA07-1B55-434C-A457-E443C8FC32D6}
+		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7} = {08F0C78D-2CB5-4EC2-A851-E8DB1D9DB9A3}
+	EndGlobalSection
+EndGlobal
