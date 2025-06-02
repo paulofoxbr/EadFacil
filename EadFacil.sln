@@ -11,6 +11,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.Core", "EadFacil.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.Core", "src\EadFacil.Core\EadFacil.Core.csproj", "{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BoundedContexts", "EadFacil.BoundedContexts", "{1876A99C-747E-4265-8331-EF9DD2CA1BC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BaudedContexts.Conteudo", "EadFacil.BaudedContexts.Conteudo", "{E7C0CE7B-8FBB-4FAF-8F9B-B7C08EF2BF59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BaudedContexts.Aluno", "EadFacil.BaudedContexts.Aluno", "{5796DEBF-B345-4FDD-BA94-B642B1A81467}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BaudedContexts.Financeiro", "EadFacil.BaudedContexts.Financeiro", "{0F383B9E-482F-45CB-B6EF-3F3356B37124}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BaudedContexts.Aluno", "EadFacil.BaudedContexts.Aluno\EadFacil.BaudedContexts.Aluno.csproj", "{0F3A4DD1-D4F2-4DAB-AEAC-7273A74DD4DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +35,10 @@ Global
 		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F3A4DD1-D4F2-4DAB-AEAC-7273A74DD4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3A4DD1-D4F2-4DAB-AEAC-7273A74DD4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3A4DD1-D4F2-4DAB-AEAC-7273A74DD4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3A4DD1-D4F2-4DAB-AEAC-7273A74DD4DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +46,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BABE7195-C1FB-4440-A1CC-7C11D8AFD00F} = {C952FA07-1B55-434C-A457-E443C8FC32D6}
 		{3C95E5CB-4B3B-4E1A-84F4-EA0ECD5BAAA7} = {08F0C78D-2CB5-4EC2-A851-E8DB1D9DB9A3}
+		{E7C0CE7B-8FBB-4FAF-8F9B-B7C08EF2BF59} = {1876A99C-747E-4265-8331-EF9DD2CA1BC3}
+		{5796DEBF-B345-4FDD-BA94-B642B1A81467} = {1876A99C-747E-4265-8331-EF9DD2CA1BC3}
+		{0F383B9E-482F-45CB-B6EF-3F3356B37124} = {1876A99C-747E-4265-8331-EF9DD2CA1BC3}
+		{0F3A4DD1-D4F2-4DAB-AEAC-7273A74DD4DE} = {5796DEBF-B345-4FDD-BA94-B642B1A81467}
 	EndGlobalSection
 EndGlobal
