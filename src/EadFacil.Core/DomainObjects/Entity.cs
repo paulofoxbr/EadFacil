@@ -6,14 +6,15 @@ namespace EadFacil.Core.DomainObjects;
 public abstract class Entity
 {
     public Guid Id { get; set; }
-    private List<Event>  _events;
+    private List<Event>?  _events;
     public IReadOnlyCollection<Event> Events => _events?.AsReadOnly();
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
+    public DateTime CreatedAt { get; private set; }
+    public DateTime UpdatedAt { get; private set; }
     
     protected Entity()
     {
         Id = Guid.NewGuid();
+        CreatedAt = DateTime.Now;
     }
     
     public void AddEvent(Event eventItem)
