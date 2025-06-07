@@ -7,7 +7,7 @@ public abstract class Entity
 {
     public Guid Id { get; set; }
     private List<Event>?  _events;
-    public IReadOnlyCollection<Event> Events => _events?.AsReadOnly();
+    public IReadOnlyCollection<Event> EventsToPublish => _events?.AsReadOnly();
     public DateTime CreatedAt { get; private set; }
     public DateTime UpdatedAt { get; private set; }
     

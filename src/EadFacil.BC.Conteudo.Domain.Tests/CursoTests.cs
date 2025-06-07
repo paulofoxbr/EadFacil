@@ -18,7 +18,7 @@ public class CursoTests
         // Assert
         Assert.True(isValid);
         Assert.Equal("Curso de Testes", curso.Titulo);
-        Assert.Equal(conteudoProgramatico, curso.conteudoProgramatico);
+        Assert.Equal(conteudoProgramatico, curso.ConteudoProgramatico);
     }
     
     [Fact]

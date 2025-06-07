@@ -9,6 +9,8 @@ public class Aula : Entity
     public string? Material { get; private set; }
     public Guid CursoId { get; private set; }
     
+    // Navegação para o curso associado à aula
+    public Curso Curso { get; private set; }
     protected Aula() { } // Construtor protegido para EF Core
     
     public Aula(string titulo, string conteudo, Guid cursoId, string? material = null)

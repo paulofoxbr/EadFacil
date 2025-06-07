@@ -1,7 +1,7 @@
 ﻿using MediatR;
 namespace EadFacil.Core.Messages.CommonMessages.DomainEvents;
 
-public abstract class DomainEvent : Message, INotification
+public abstract class DomainEvent : Event, INotification
 {
     public DateTime TimeStamp { get; private set; }
 
