@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6C809055
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BC.Conteudo.Domain.Tests", "src\EadFacil.BC.Conteudo.Domain.Tests\EadFacil.BC.Conteudo.Domain.Tests.csproj", "{3923DB26-8CB9-46A7-A825-2BE8501FB0C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.APIv3", "EadFacil.APIv3\EadFacil.APIv3.csproj", "{9740FC19-B290-4FF3-BFC0-71E1F93876B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{3923DB26-8CB9-46A7-A825-2BE8501FB0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3923DB26-8CB9-46A7-A825-2BE8501FB0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3923DB26-8CB9-46A7-A825-2BE8501FB0C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9740FC19-B290-4FF3-BFC0-71E1F93876B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9740FC19-B290-4FF3-BFC0-71E1F93876B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9740FC19-B290-4FF3-BFC0-71E1F93876B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9740FC19-B290-4FF3-BFC0-71E1F93876B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,6 @@ Global
 		{5143DDB4-22DE-4EA7-A288-D0A1835C044E} = {E7C0CE7B-8FBB-4FAF-8F9B-B7C08EF2BF59}
 		{23F951D2-F62B-4C94-8C1F-3198165A3C68} = {E7C0CE7B-8FBB-4FAF-8F9B-B7C08EF2BF59}
 		{3923DB26-8CB9-46A7-A825-2BE8501FB0C5} = {6C809055-5621-444E-B7A7-0608F6EE8526}
+		{9740FC19-B290-4FF3-BFC0-71E1F93876B6} = {C952FA07-1B55-434C-A457-E443C8FC32D6}
 	EndGlobalSection
 EndGlobal

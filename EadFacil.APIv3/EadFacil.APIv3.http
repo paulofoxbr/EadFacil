@@ -1,0 +1,6 @@
+@EadFacil.APIv3_HostAddress = http://localhost:5259
+
+GET {{EadFacil.APIv3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
