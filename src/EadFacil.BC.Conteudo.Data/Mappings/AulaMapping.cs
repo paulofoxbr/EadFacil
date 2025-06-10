@@ -20,9 +20,8 @@ public class AulaMapping : IEntityTypeConfiguration<Aula>
             .HasColumnType("varchar(200)")
             .HasMaxLength(200);
 
-         builder.HasOne(a => a.Curso)
-             .WithMany(c => c.Aulas)
-             .HasForeignKey(a => a.CursoId);
+        builder.HasOne(a => a.Curso)
+            .WithMany(c => c.Aulas)
+            .HasForeignKey(a => a.CursoId);
     }
-    
 }

@@ -1,30 +1,69 @@
+using System.Text;
+using EadFacil.Api.Authorizations;
+using EadFacil.Api.Configurations;
+using EadFacil.Api.Data.DbContext;
+using EadFacil.Api.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+//builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<LoginDbContext>(optionsAction: options =>
+    {
+        if (builder.Environment.IsDevelopment())
+        {
+            options.UseSqlite(builder.Configuration.GetConnectionString("SqliteConnection"));
+        }
+        else 
+        {   
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+        }
+    });
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<LoginDbContext>();
+
+
+
+#region Swagger Configuration
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSwaggerGen(options =>
+builder.Services.AddSwaggerGen(c =>
 {
-    options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "MinhaApi", Version = "v1" });
+
+    // Configuração do esquema de segurança Bearer
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+        Type = SecuritySchemeType.Http,
         Scheme = "bearer",
         BearerFormat = "JWT",
-        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        In = ParameterLocation.Header,
         Description = "Insira o token JWT no formato: Bearer {seu token}"
     });
 
-    options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
-            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            new OpenApiSecurityScheme
             {
-                Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                Reference = new OpenApiReference
                 {
-                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Type = ReferenceType.SecurityScheme,
                     Id = "Bearer"
                 }
             },
@@ -33,25 +72,46 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+#endregion
 
+#region JWT Authentication
 
+var jwtSettingsSection = builder.Configuration.GetSection("JwtSettings");
+builder.Services.Configure<JwtSettins>(jwtSettingsSection);
+var jwtSettings = jwtSettingsSection.Get<JwtSettins>();
+if (jwtSettings != null)
+{
+    var key = Encoding.ASCII.GetBytes(jwtSettings.Secret);
 
-var key = "minha-chave-secreta-para-autenticacao";
-
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
+    builder.Services.AddAuthentication(options =>
     {
-        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    }).AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = true;
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(key))
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidAudience = jwtSettings.Audience,
+            ValidIssuer = jwtSettings.Issuer,
         };
     });
+}
 
-builder.Services.AddAuthorization();
+#endregion
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddScoped<IAuthorizationHandler, AlunoAuthorizationHandler>();
+builder.Services.AddScoped<IAuthorizationHandler, FinanceiroAuthorizationHandler>();
+builder.Services.AddScoped<IAuthorizationHandler, ConteudoAuthorizationHandler>();
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("AdminPolicy", policy => policy.Requirements.Add(new FinanceiroAuthorizationRequirement()));
+});
 
 
 var app = builder.Build();
@@ -63,19 +123,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseSwaggerUI(c =>
-{
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "EadFacil API V1");
-    c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
-});
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseHttpsRedirection();
-app.MapGet("/", () => "EadFacil API is running!");
-app.MapGet("/seguro", [Authorize] () => "Este endpoint � protegido!");
-
+app.MapControllers();
+app.UseDbMigrationHelper();
 
 app.Run();
-
-

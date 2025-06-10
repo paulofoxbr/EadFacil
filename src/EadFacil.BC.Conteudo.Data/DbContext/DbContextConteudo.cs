@@ -1,12 +1,12 @@
-﻿using EadFacil.BC.Conteudo.Domain.Entities;
+﻿using EadFacil.BC.Conteudo.Data.Extensions;
+using EadFacil.BC.Conteudo.Domain.Entities;
 using EadFacil.Core.Communication.Mediator;
 using EadFacil.Core.Data;
 using EadFacil.Core.Messages;
+
+namespace EadFacil.BC.Conteudo.Data.DbContext;
 using Microsoft.EntityFrameworkCore;
-
-namespace EadFacil.BC.Conteudo.Data;
-
-public class DbContextConteudo : DbContext,IUnitOfWork 
+public class DbContextConteudo : DbContext, IUnitOfWork
 {
     private readonly IMediatorHandler _mediatorHandler;
     public DbContextConteudo(DbContextOptions<DbContextConteudo> options,IMediatorHandler mediatorHandler) : base(options)
@@ -29,4 +29,5 @@ public class DbContextConteudo : DbContext,IUnitOfWork
         if (suscess) await _mediatorHandler.PublicarEventos(this);
         return suscess;
     }
+    
 }

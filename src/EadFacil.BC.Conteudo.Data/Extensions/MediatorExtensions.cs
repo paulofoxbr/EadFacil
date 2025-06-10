@@ -1,9 +1,9 @@
-﻿using EadFacil.Core.Communication.Mediator;
+﻿using EadFacil.BC.Conteudo.Data.DbContext;
+using EadFacil.Core.Communication.Mediator;
 using EadFacil.Core.DomainObjects;
 using EadFacil.Core.Messages;
-using EadFacil.Core.Messages.CommonMessages.DomainEvents;
 
-namespace EadFacil.BC.Conteudo.Data;
+namespace EadFacil.BC.Conteudo.Data.Extensions;
 
 public static class MediatorExtensions
 {
@@ -21,7 +21,7 @@ public static class MediatorExtensions
             .ForEach(entity=>entity.Entity.ClearEvents());
         
         var tasks = domainEvents.Select(async (domainEvent) =>
-        { await mediator.PublicarEvento(domainEvent); });
+            { await mediator.PublicarEvento(domainEvent); });
         
         return Task.WhenAll(tasks);
     }
