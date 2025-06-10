@@ -21,7 +21,7 @@ O projeto consiste em:
   - ASP.NET Core MVC
   - ASP.NET Core Web API
   - Entity Framework Core
-- **Banco de Dados:** SQL Server
+- **Banco de Dados:** SQL Server e SQLITE
 - **Autenticação e Autorização:**
   - ASP.NET Core Identity
   - JWT (JSON Web Token) para autenticação na API
@@ -31,20 +31,18 @@ O projeto consiste em:
 ## **4. Estrutura do Projeto**
 
 A estrutura do projeto é organizada da seguinte forma:
-
-
 - src/
-  - Blog.Web/ - Projeto MVC
-  - Blog.Api/ - API RESTful
-  - Blog.Data/ - Modelos de Dados e Configuração do EF Core
+  - EadFacil/Api/ - API RESTful
+  - EadFacil.BC/ - Bounded Context
+      - EadFacil.BC.Aluno
+      - EadFacil.BC.Conteudo
+      - EadFacil.BC.Financeiro
 - README.md - Arquivo de Documentação do Projeto
 - FEEDBACK.md - Arquivo para Consolidação dos Feedbacks
 - .gitignore - Arquivo de Ignoração do Git
 
 ## **5. Funcionalidades Implementadas**
-
-- **CRUD para Posts e Comentários:** Permite criar, editar, visualizar e excluir posts e comentários.
-- **Autenticação e Autorização:** Diferenciação entre usuários comuns e administradores.
+- **Autenticação e Autorização:** Diferenciação entre Alunos, Financieor e Administradores.
 - **API RESTful:** Exposição de endpoints para operações CRUD via API.
 - **Documentação da API:** Documentação automática dos endpoints da API utilizando Swagger.
 
@@ -52,8 +50,9 @@ A estrutura do projeto é organizada da seguinte forma:
 
 ### **Pré-requisitos**
 
-- .NET SDK 8.0 ou superior
+- .NET SDK 9.0 ou superior
 - SQL Server
+- SQL LITE
 - Visual Studio 2022 ou superior (ou qualquer IDE de sua preferência)
 - Git
 
@@ -67,13 +66,8 @@ A estrutura do projeto é organizada da seguinte forma:
    - No arquivo `appsettings.json`, configure a string de conexão do SQL Server.
    - Rode o projeto para que a configuração do Seed crie o banco e popule com os dados básicos
 
-3. **Executar a Aplicação MVC:**
-   - `cd src/Blog.Mvc/`
-   - `dotnet run`
-   - Acesse a aplicação em: http://localhost:5000
-
-4. **Executar a API:**
-   - `cd src/Blog.Api/`
+3. **Executar a API:**
+   - `cd src/EadFacil.Api/
    - `dotnet run`
    - Acesse a documentação da API em: http://localhost:5001/swagger
 
@@ -90,6 +84,4 @@ http://localhost:5001/swagger
 
 ## **9. Avaliação**
 
-- Este projeto é parte de um curso acadêmico e não aceita contribuições externas. 
-- Para feedbacks ou dúvidas utilize o recurso de Issues
-- O arquivo `FEEDBACK.md` é um resumo das avaliações do instrutor e deverá ser modificado apenas por ele.
+
