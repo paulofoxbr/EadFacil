@@ -10,4 +10,9 @@
       <ProjectReference Include="..\src\EadFacil.Core\EadFacil.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Events\" />
+      <Folder Include="Validadions\" />
+    </ItemGroup>
+
 </Project>

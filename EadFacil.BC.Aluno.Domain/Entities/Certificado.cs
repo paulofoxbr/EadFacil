@@ -1,6 +1,8 @@
-﻿namespace EadFacil.BC.Aluno.Domain.Entities;
+﻿using EadFacil.Core.DomainObjects;
 
-public class Certificado
+namespace EadFacil.BC.Aluno.Domain.Entities;
+
+public class Certificado : Entity
 {
     public Guid MatriculaId { get; private set; }
     public Guid AlunoId { get; private set; }
