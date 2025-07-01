@@ -1,5 +1,4 @@
-﻿namespace EadFacil.BC.Aluno.Domain.ValueObjects;
-
+﻿namespace EadFacil.BC.GestaoAluno.Domain.ValueObjects;
 public class HistoricoAprendizado
 {
     public Guid  MatriculaId { get; private set; }

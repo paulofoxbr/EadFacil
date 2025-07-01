@@ -1,4 +1,5 @@
 ﻿using EadFacil.Core.DomainObjects;
+
 namespace EadFacil.BC.GestaoAluno.Domain.Entities;
 
 public sealed class MatriculaAula : Entity

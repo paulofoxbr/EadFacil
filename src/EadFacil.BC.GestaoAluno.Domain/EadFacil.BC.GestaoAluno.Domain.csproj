@@ -4,11 +4,10 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>EadFacil.BC.Aluno.Domain</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\EadFacil.Core\EadFacil.Core.csproj" />
+       <ProjectReference Include="..\EadFacil.Core\EadFacil.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>

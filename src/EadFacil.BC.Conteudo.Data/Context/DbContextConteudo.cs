@@ -1,33 +1,27 @@
-﻿using EadFacil.BC.GestaoAluno.Domain.Entities;
+﻿using EadFacil.BC.Conteudo.Domain.Entities;
 using EadFacil.Core.Communication.Mediator;
 using EadFacil.Core.Data;
 using EadFacil.Core.Data.Extensions;
 using EadFacil.Core.Messages;
 using Microsoft.EntityFrameworkCore;
 
-namespace EadFacil.BC.Aluno.Data.DbContext;
-
-public class DbContextAluno : Microsoft.EntityFrameworkCore.DbContext,IUnitOfWork
+namespace EadFacil.BC.Conteudo.Data.Context;
+public class DbContextConteudo : DbContext, IUnitOfWork
 {
     private readonly IMediatorHandler _mediatorHandler;
-
-    public DbContextAluno(DbContextOptions<DbContextAluno> options,IMediatorHandler mediatorHandler) : base(options)
+    public DbContextConteudo(DbContextOptions<DbContextConteudo> options,IMediatorHandler mediatorHandler) : base(options)
     {
         _mediatorHandler = mediatorHandler;
     }
+    public DbSet<Curso> Cursos { get; set; }
+    public DbSet<Aula> Aulas { get; set; }
 
-    public DbSet<Aluno> Alunos { get; set; }
-    public DbSet<Matricula> Matriculas { get; set; }
-    public DbSet<MatriculaAula> MatriculasAulas { get; set; }
-    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Ignore<Event>();    
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(DbContextAluno).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(DbContextConteudo).Assembly);
     }
-
-
     public async Task<bool> Commit()
     {
         var result = await base.SaveChangesAsync();
@@ -35,4 +29,5 @@ public class DbContextAluno : Microsoft.EntityFrameworkCore.DbContext,IUnitOfWor
         if (suscess) await _mediatorHandler.PublicarEventos(this);
         return suscess;
     }
+    
 }
