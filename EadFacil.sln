@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BC", "EadFacil.BC"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BC.Conteudo", "EadFacil.BC.Conteudo", "{E7C0CE7B-8FBB-4FAF-8F9B-B7C08EF2BF59}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BC.Aluno", "EadFacil.BC.Aluno", "{5796DEBF-B345-4FDD-BA94-B642B1A81467}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BC.GestaoAluno", "EadFacil.BC.GestaoAluno", "{5796DEBF-B345-4FDD-BA94-B642B1A81467}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EadFacil.BC.Financeiro", "EadFacil.BC.Financeiro", "{0F383B9E-482F-45CB-B6EF-3F3356B37124}"
 EndProject
@@ -36,11 +36,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BC.Conteudo.Data",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.Api", "src\EadFacil.Api\EadFacil.Api.csproj", "{AC4380AF-4748-4D10-B17C-D9993C211AF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BC.Aluno.Application", "src\EadFacil.BC.Aluno.Application\EadFacil.BC.Aluno.Application.csproj", "{816C29FD-D847-4799-ADD6-D21A7C6B977C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BC.GestaoAluno.Application", "src\EadFacil.BC.GestaoAluno.Application\EadFacil.BC.GestaoAluno.Application.csproj", "{816C29FD-D847-4799-ADD6-D21A7C6B977C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BC.Aluno.Data", "EadFacil.BC.Aluno.Data\EadFacil.BC.Aluno.Data.csproj", "{3F8B0C1B-8B59-4FE1-B8B7-A6DAAB15E28A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BC.GestaoAluno.Data", "EadFacil.BC.GestaoAluno.Data\EadFacil.BC.GestaoAluno.Data.csproj", "{3F8B0C1B-8B59-4FE1-B8B7-A6DAAB15E28A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BC.Aluno.Domain", "EadFacil.BC.Aluno.Domain\EadFacil.BC.Aluno.Domain.csproj", "{0CC3BB3F-B759-4305-82C8-ED0381148656}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EadFacil.BC.GestaoAluno.Domain", "EadFacil.BC.GestaoAluno.Domain\EadFacil.BC.GestaoAluno.Domain.csproj", "{0CC3BB3F-B759-4305-82C8-ED0381148656}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

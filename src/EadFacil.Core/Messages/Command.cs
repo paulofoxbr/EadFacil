@@ -4,12 +4,13 @@ namespace EadFacil.Core.Messages;
 
 public abstract class Command :Message, IRequest<bool>
 {
-    public DateTime Timestamp { get; private set; }
+    public DateTime CreatedAt { get; private set; }
     public ValidationResult ValidationResult { get; private set; }
 
     protected Command()
     {
-        Timestamp = DateTime.Now;
+        CreatedAt = DateTime.UtcNow;
+        ValidationResult = new ValidationResult();
     }
     public virtual bool IsValid()
     {

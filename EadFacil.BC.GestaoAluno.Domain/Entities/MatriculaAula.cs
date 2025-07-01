@@ -1,6 +1,7 @@
-﻿namespace EadFacil.BC.Aluno.Domain.Entities;
+﻿using EadFacil.Core.DomainObjects;
+namespace EadFacil.BC.GestaoAluno.Domain.Entities;
 
-public class MatriculaAula
+public sealed class MatriculaAula : Entity
 {
     public Guid MatriculaId { get; private set; }
     public Guid AulaId { get; private set; }

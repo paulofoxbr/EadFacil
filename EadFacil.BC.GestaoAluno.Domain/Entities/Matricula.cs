@@ -1,8 +1,8 @@
 ﻿using EadFacil.Core.DomainObjects;
 
-namespace EadFacil.BC.Aluno.Domain.Entities;
+namespace EadFacil.BC.GestaoAluno.Domain.Entities;
 
-public class Matricula
+public sealed class Matricula : Entity,IEquatable<Matricula>
 {
     public Guid AlunoId { get; private set; }
     public Guid CursoId { get; private set; }

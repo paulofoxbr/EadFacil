@@ -1,8 +1,8 @@
 ﻿using EadFacil.Core.DomainObjects;
 
-namespace EadFacil.BC.Aluno.Domain.Entities;
+namespace EadFacil.BC.GestaoAluno.Domain.Entities;
 
-public class Aluno : Entity, IAggregateRoot
+public sealed class Aluno : Entity, IAggregateRoot
 {
     public string Nome { get; private set; } = string.Empty;
     public string Email { get; private set; } = string.Empty;
